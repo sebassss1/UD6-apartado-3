@@ -1,0 +1,29 @@
+COMANDOS USADOS EN EL APARTADO 3 DE LA UNIDAD 6 Ubuntu Server 20.04
+
+#COMANDO USADO PARA CREAR LOS GRUPOS:
+groupadd depSistemasInformacion
+groupadd depDesarrolloSoftware
+groupadd depExplotacionSoftware
+
+#COMANDO USADO PARA CREAR LOS USUARIOS:
+usu_sinformacion:
+useradd -g depSistemasInformacion -d /home/usu_sinformacion -m -s /bin/bash usu_sinformacion
+
+usu_desarrollo:
+useradd -g depDesarrolloSoftware -d /home/usu_desarrollo -m -s /bin/bash usu_desarrollo
+
+usu_explotacion:
+
+useradd -g depExplotacionSoftware -d /home/usu_explotacion -m -s /bin/bash usu_explotacion
+
+#LISTAR LOS USUARIOS CREADOS:
+cat /etc/passwd
+
+#CREAR CONTRASEÑA USUARIO:
+
+passwd 'usuario'
+
+#PERMISOS SOBRE LOS DIRECTORIOS:
+
+usu_sinformacion
+setfacl -m d:g:depSistemasInformacion:7 proyectos
